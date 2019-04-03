@@ -1,0 +1,86 @@
+
+#task1
+$text1='Hello ';
+
+$text2='World';
+
+echo $text1 . lcfirst($text2) . "!";
+
+#task2
+$var = "hello";
+
+echo $var{0} . ' '  . $var{1} . ' ' . $var{4};
+
+#task3
+<form method="GET">
+    Number: <input type="text" name="a" /><br>
+    <input type="submit" value="Отправить">
+</form>
+
+<?php
+ $a = 3;
+
+ if(isset($_GET['a'])){
+     $a = $_GET['a'];
+
+     if($a>0 && $a<5){
+         echo "Вірно";
+     }else{
+         echo "Не вірно";
+     }
+ }
+
+#task4
+<form method="GET">
+    <label>Введіть число від 0 до 59</label>
+    Число: <input type="text" maxlength="2" name="min" /><br>
+    <input type="submit" value="Визначити чверть">
+</form>
+
+<?php
+ $min = 0;
+
+ if(isset($_GET['min'])){
+     $min = $_GET['min'];
+
+     if($min>=0 && $min<=15){
+         echo "Перша чверть";
+     }if($min>=16 && $min<=30){
+         echo "Друга чверть";
+     }if($min>=31 && $min<=45){
+         echo "Третя чверть";
+     }if($min>=46 && $min<=59){
+         echo "Четверта чверть";
+     }else{
+         echo "Введіть число від 0 до 59";
+     }
+ }
+
+#task5
+<?php
+ $years = array(1995, 1700, 1800, 1996, 2000, 1900);
+
+ foreach ($years as $year){
+
+     if(($year%4==0 && $year%100!=0)||($year%100==0 && $year%400==0)){
+         echo $year . " - високосний " , '<br/>';
+
+     }else{
+         echo $year . " - не високосний ", '<br/>';
+
+     }
+ }
+
+#task6
+
+ $number='385934';
+
+ $sum_first_3=intval($number{0})+intval($number{1})+intval($number{2});
+
+ $sum_second_3=intval($number{3})+intval($number{4})+intval($number{5});
+
+ if( $sum_first_3==$sum_second_3){
+     echo 'True';
+ }else{
+     echo 'False';
+ }
